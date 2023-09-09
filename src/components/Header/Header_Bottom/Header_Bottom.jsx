@@ -1,24 +1,13 @@
-import { List, MagnifyingGlass } from "@phosphor-icons/react"
+import Menu from "../components/Menu";
+import Search from "../components/Search";
 
 
 const Header_Bottom = () => {
 
-    const handleSearchWord = (e)=>{
-        if(e.key === "Enter"){
-            window.location.reload();
-        }
-    }
-
     return (
         <div className="w-full h-[63%] bg-[#c4170c] flex items-center justify-between p-0 md:p-4">
             <div className="w-1/5 md:w-[200px] flex items-center justify-center">
-                <div className="flex items-center w-1/2 md:border-r-[1px] border-r-zinc-100 border-dashed">
-                    <List
-                        size={28}
-                        className="font-bold"
-                    />
-                    <h3 className="text-md font-medium text-white hidden md:block">MENU</h3>
-                </div>
+               <Menu />
                 <div className=" justify-center w-1/2 hidden md:flex">
                     <svg
                         fill="none"
@@ -31,20 +20,7 @@ const Header_Bottom = () => {
                 </div>
             </div>
             <h2 className="w-3/5 text-center text-4xl text-white">SAÚDE</h2>
-            <div className="w-1/5 flex items-center">
-                <div className="w-full md:w-[180px] flex items-center justify-start md:bg-red-800 p-1 rounded-md group hover:bg-zinc-100 hover:w-[300px] transition-all duration-500 overflow-hidden">
-                    <MagnifyingGlass
-                        size={24}
-                        className="w-full md:w-1/5 group-hover:text-zinc-700 font-medium"
-                    />
-                    <h3 className="group-hover:hidden font-medium text-zinc-200 hidden md:block">BUSCAR</h3>
-                    <input
-                        type="search"
-                        className="w-4/5 hidden group-hover:block bg-transparent outline-none bg-zinc-100 text-zinc-700"
-                        onKeyDown={handleSearchWord}
-                    />
-                </div>
-            </div>
+            <Search />
         </div>
     )
 }
