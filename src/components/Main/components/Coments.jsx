@@ -6,19 +6,22 @@ const Coments = () => {
             date: "HÁ 1 DIA",
             text: "Eu estava no aguardo de um produto assim, e finalmente lançaram. Vou aproveitar que está na promoção e comprar vai que o preço aumenta, estamos no Brasil ne hahahah",
             answers: [
-                {
-                    name: "Rubens Sales",
-                    photo: "https://curcumy.net.br/wp-content/uploads/2022/09/avatar.svg",
-                    date: "HÁ 1 DIA",
-                    text: "Comprei pra mim e chegou tudo certo aqui em Recife, sempre desconfio em comprar na internet, mas esse foi o único confiável pra mim. Estou amando minha vida sem dor.",
-                },
+
+
+            ]
+        },
+        {
+            name: "Rubens Sales",
+            photo: "https://curcumy.net.br/wp-content/uploads/2022/09/avatar.svg",
+            date: "HÁ 1 DIA",
+            text: "Comprei pra mim e chegou tudo certo aqui em Recife, sempre desconfio em comprar na internet, mas esse foi o único confiável pra mim. Estou amando minha vida sem dor.",
+            answers: [
                 {
                     name: "Mayara Almeida",
                     photo: "https://curcumy.net.br/wp-content/uploads/2022/09/2.jpg",
                     date: "HÁ 1 DIA",
                     text: "Obrigada por comentar Rubens, eu vi na internet e estava meio desconfiada mas depois que você falou, e lendo os comentários aqui, vi que o negocio funciona mesmo, vou pedir o meu hoje.",
-                },
-
+                }
             ]
         },
         {
@@ -37,7 +40,7 @@ const Coments = () => {
                     name: "Maria Fernanda",
                     photo: "https://curcumy.net.br/wp-content/uploads/2022/09/5.jpg",
                     date: "HÁ 3 DIAS",
-                    text: "Amiga, funciona sim, também não aguentava mais de tanta dor, uso desde quando lançou aqui no brasil e foi o unico que funcionou comigo. eu comprei nesse site aqui -[PRECISA COLOCAR O SITE AQUI]",
+                    text: `Amiga, funciona sim, também não aguentava mais de tanta dor, uso desde quando lançou aqui no brasil e foi o unico que funcionou comigo. eu comprei nesse site aqui <a className="underline" href="https://curcumytratamento.ver-receita.cloud/">curcumy.com.br/oficial`,
                 },
             ]
         },
@@ -87,7 +90,7 @@ const Coments = () => {
                                                 <div className="w-4/5 flex flex-col p-4">
                                                     <h2 className="text-xl">{answer.name}</h2>
                                                     <h3 className="text-sm text-zinc-500">{answer.date}</h3>
-                                                    <p className="mt-4 text-zinc-500">{answer.text}</p>
+                                                    <p className="mt-4 text-zinc-500" dangerouslySetInnerHTML={{ __html:answer.text}}></p>
                                                 </div>
                                             </div>
                                         )
