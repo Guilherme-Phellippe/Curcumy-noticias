@@ -47,51 +47,53 @@ const Coments = () => {
 
     return (
         <div className="flex flex-col">
-            <h2 className="text-3xl my-8"><span className="font-bold">108 </span> COMENTÁRIOS</h2>
-            <div className="w-full shadow-sm flex flex-col border-[1px]">
+            <h2 className="text-2xl md:text-3xl my-8"><span className="font-bold">108 </span> COMENTÁRIOS</h2>
+            <div className="w-full shadow-sm flex flex-col rounded-xl border-[1px]">
                 {
                     coments.map(coment =>
                         <div
                             key={coment.name}
                             className="flex flex-col border-b-[1px]"
                         >
-                            <div className="flex">
-                                <div className="flex w-1/5 h-full p-4">
-                                    <img
-                                        className="w-[100px] h-[100px] rounded-full"
-                                        src={coment.photo}
-                                        alt={`imagem de ${coment.name}`}
-                                    />
-                                </div>
-                                <div className="w-4/5 flex flex-col p-4">
-                                    <h2 className="text-xl">{coment.name}</h2>
-                                    <h3 className="text-sm text-zinc-500">{coment.date}</h3>
-                                    <p className="mt-4 text-zinc-500">{coment.text}</p>
-                                    <div
-                                        key={coment.name}
-                                        className="w-full flex flex-col"
-                                    >
-                                        {
-                                            coment.answers.map(answer =>
-                                                <div key={answer.name} className="flex w-full -translate-x-24">
-                                                    <div className="flex w-1/5 h-full p-4">
-                                                        <img
-                                                            className="w-[70px] h-[70px] rounded-full"
-                                                            src={answer.photo}
-                                                            alt={`imagem de ${answer.name}`}
-                                                        />
-                                                    </div>
-                                                    <div className="w-4/5 flex flex-col p-4">
-                                                        <h2 className="text-xl">{answer.name}</h2>
-                                                        <h3 className="text-sm text-zinc-500">{answer.date}</h3>
-                                                        <p className="mt-4 text-zinc-500">{answer.text}</p>
-                                                    </div>
-                                                </div>
-                                            )
-                                        }
-
-
+                            <div className="flex flex-col">
+                                <div className="flex">
+                                    <div className="flex justify-center my-4 w-1/5 h-full p-0 md:p-4">
+                                        <img
+                                            className="w-[60px] md:w-[100px] h-[60px] md:h-[100px] rounded-full"
+                                            src={coment.photo}
+                                            alt={`imagem de ${coment.name}`}
+                                        />
                                     </div>
+                                    <div className="w-4/5 flex flex-col p-4">
+                                        <h2 className="text-xl">{coment.name}</h2>
+                                        <h3 className="text-sm text-zinc-500">{coment.date}</h3>
+                                        <p className="mt-4 text-zinc-500">{coment.text}</p>
+                                    </div>
+                                </div>
+                                <div
+                                    key={coment.name}
+                                    className="w-full flex items-end flex-col"
+                                >
+                                    {
+                                        coment.answers.map(answer =>
+                                            <div key={answer.name} className="flex w-[90%] rounded-lg bg-zinc-100">
+                                                <div className="flex justify-center my-4 w-1/5 h-full md:p-4">
+                                                    <img
+                                                        className="w-[50px] h-[50px] rounded-full"
+                                                        src={answer.photo}
+                                                        alt={`imagem de ${answer.name}`}
+                                                    />
+                                                </div>
+                                                <div className="w-4/5 flex flex-col p-4">
+                                                    <h2 className="text-xl">{answer.name}</h2>
+                                                    <h3 className="text-sm text-zinc-500">{answer.date}</h3>
+                                                    <p className="mt-4 text-zinc-500">{answer.text}</p>
+                                                </div>
+                                            </div>
+                                        )
+                                    }
+
+
                                 </div>
                             </div>
                         </div>

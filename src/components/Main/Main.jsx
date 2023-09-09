@@ -12,8 +12,8 @@ const Main = () => {
 
     return (
         <main className="w-screen max-w-[1500px] mx-auto bg-white">
-            <div className="w-full max-w-[1200px] mx-auto mt-32 mb-16">
-                <div className="w-2/3">
+            <div className="w-full max-w-[1200px] mx-auto mt-12 md:mt-32 mb-16">
+                <div className="w-full px-2 md:px-0 md:w-2/3">
                     <Introduction />
                     <Text1 />
                     <Text2 />
@@ -24,7 +24,7 @@ const Main = () => {
                     <Text6 />
                     <Coments />
                 </div>
-                <div className="w-1/3">
+                <div className="w-1/3 hidden md:block">
 
                 </div>
             </div>

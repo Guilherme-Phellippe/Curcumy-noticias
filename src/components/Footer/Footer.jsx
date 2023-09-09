@@ -1,6 +1,6 @@
 const Footer = () => {
     return (
-        <footer className="bg-[#c4170c] w-full h-[120px] p-4">
+        <footer className="bg-[#c4170c] w-full h-[120px] p-2 md:p-4">
             <div className="h-1/2 flex">
                 <div className="flex justify-center items-center gap-4">
                     <svg
@@ -15,7 +15,7 @@ const Footer = () => {
                 </div>
             </div>
             <div className="h-1/2 flex items-end">
-                <span className="text-white">© Copyright 2000-2023 Globo Comunicação e Participações S.A.</span>
+                <span className="text-white text-xs">© Copyright 2000-2023 Globo Comunicação e Participações S.A.</span>
             </div>
 
         </footer>
