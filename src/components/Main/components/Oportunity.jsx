@@ -12,7 +12,7 @@ const Oportunity = () => {
             <button 
                 className="bg-green-400 p-4 px-8 mx-auto my-4 rounded-md shadow-md"
                 onClick={handleRedirectToSalesPage}
-            >Comprar agora</button>
+            >Saiba mais</button>
         </div>
     )
 }
