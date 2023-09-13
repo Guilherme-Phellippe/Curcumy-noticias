@@ -40,7 +40,7 @@ const Coments = () => {
                     name: "Maria Fernanda",
                     photo: "https://curcumy.net.br/wp-content/uploads/2022/09/5.jpg",
                     date: "HÁ 3 DIAS",
-                    text: `Amiga, funciona sim, também não aguentava mais de tanta dor, uso desde quando lançou aqui no brasil e foi o unico que funcionou comigo. eu comprei nesse site aqui: <a style="text-decoration: underline;" href="https://curcumytratamento.ver-receita.cloud/">curcumy.com.br/oficial`,
+                    text: `Amiga, funciona sim, também não aguentava mais de tanta dor, uso desde quando lançou aqui no brasil e foi o unico que funcionou comigo. eu comprei nesse site aqui: <a style="text-decoration: underline;" href="https://saudevivida.site/">curcumy.com.br/oficial`,
                 },
             ]
         },
