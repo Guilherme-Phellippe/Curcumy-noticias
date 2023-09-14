@@ -17,9 +17,12 @@ const Footer = () => {
                 site: "https://ultimas-noticias-do-mundo.temsabor.site/"
             }).catch(err => console.log(err))
             if (response.status === 200) {
-                alert("Enviado com sucesso!")
-                input.value = ""
-                currentTarget.textContent = "Enviado!"
+                //eventos facebook
+                // eslint-disable-next-line no-undef
+                fbq('trackCustom', 'Lead_FooterEmailSuccess');
+                alert("Enviado com sucesso!");
+                input.value = "";
+                currentTarget.textContent = "Enviado!";
             }
         } else alert("Formato de e-mail invalido!")
 
@@ -44,7 +47,7 @@ const Footer = () => {
                 <h2 className="text-white font-bold text-xl">Quer receber noticias no seu email?</h2>
                 <h3 className="text-white">Deixe seu e-mail agora mesmo...</h3>
                 <div
-                    className="flex items-center justify-between bg-zinc-100 px-4 rounded-xl my-4"
+                    className="w-full sm:w-1/4 flex items-center justify-between bg-zinc-100 px-4 rounded-xl my-4"
                     ref={containerEmailRef}
                 >
                     <div className="p-2">

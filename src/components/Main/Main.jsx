@@ -1,3 +1,4 @@
+import { useEffect } from "react"
 import Coments from "./components/Coments"
 import Introduction from "./components/Introduction"
 import Oportunity from "./components/Oportunity"
@@ -9,6 +10,16 @@ import Text5 from "./components/Text5"
 import Text6 from "./components/Text6"
 
 const Main = () => {
+
+    useEffect(()=>{
+        const timeout = setTimeout(() => {
+            // eslint-disable-next-line no-undef
+            fbq("trackCustom", "news_UserIsInterested")
+            clearTimeout(timeout);
+        }, 100000);
+
+        return ()=> clearTimeout(timeout);
+    },[])
 
     return (
         <main className="w-screen max-w-[1500px] mx-auto bg-white">

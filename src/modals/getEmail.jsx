@@ -10,28 +10,33 @@ const GetEmail = () => {
         timeout.current = setTimeout(() => {
             refContainer.current.classList.add("grid")
             refContainer.current.classList.remove("hidden")
-            setTimeout(() => {
+            const timeout2 = setTimeout(() => {
                 refContainer.current.classList.remove("scale-0")
                 refContainer.current.classList.add("scale-100")
                 refContainer.current.classList.add("bg-[#fffa]")
                 clearTimeout(timeout.current)
+                clearTimeout(timeout2)
             }, 1000);
-        }, 60000);
+        }, 120000);
     }, []);
 
     const handleClose = ({ target }) => {
         if (target.dataset.close === "true") {
+            //eventos facebook
+            // eslint-disable-next-line no-undef
+            fbq('trackCustom', 'Lead_DontSendEmail');
+
             refContainer.current.classList.add("hidden")
             refContainer.current.classList.remove("grid")
             clearTimeout(timeout.current)
         }
     }
 
-    
+
     const handleSendLead = async ({ currentTarget }) => {
         const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         const input = refContainer.current.querySelector("input");
-        const email = input.value ;
+        const email = input.value;
 
         if (regex.test(email)) {
             currentTarget.textContent = "Enviando..."
@@ -41,7 +46,11 @@ const GetEmail = () => {
                 site: "https://ultimas-noticias-do-mundo.temsabor.site/"
             }).catch(err => console.log(err))
             if (response.status === 200) {
+                //eventos facebook
+                // eslint-disable-next-line no-undef
+                fbq('trackCustom', 'Lead_EmailSuccess');
                 handleClose({ target: { dataset: { close: "true" } } })
+
             }
         } else alert("Formato de e-mail invalido!")
     }
@@ -59,7 +68,7 @@ const GetEmail = () => {
                 <h3 className="text-center text-xl my-4 mt-8 font-medium leading-6 text-white">Deixe seu E-mail para receber nossas noticias</h3>
                 <div className="flex items-center justify-start bg-zinc-100 px-4 rounded-xl">
                     <div className="p-2">
-                        <Envelope  className="fill-blue-900 text-3xl" />
+                        <Envelope className="fill-blue-900 text-3xl" />
                     </div>
                     <input
                         type="email"
