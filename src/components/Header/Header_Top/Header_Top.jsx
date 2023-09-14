@@ -1,28 +1,23 @@
 const links = [
     {
-        name: "globo.com",
+        name: "noticas.com",
         color: 1,
-        link: "https://www.globo.com/"
     },
     {
-        name: "g1",
+        name: "Exlusivo",
         color: 2,
-        link: "https://g1.globo.com/?utm_source=barraGCOM"
     },
     {
-        name: "ge",
+        name: "Esporte",
         color: 3,
-        link: "https://g1.globo.com/?utm_source=barraGCOM"
     },
     {
-        name: "gshow",
+        name: "Shows",
         color: 4,
-        link: "https://g1.globo.com/?utm_source=barraGCOM"
     },
     {
-        name: "globoplay",
+        name: "Eventos",
         color: 5,
-        link: "https://g1.globo.com/?utm_source=barraGCOM"
     },
 ];
 
